@@ -1,11 +1,17 @@
-<h2>Lista de Películas Populares</h2>
+<h2 class="text-3xl font-bold mb-4">Lista de Películas Populares</h2>
 
-<ul>
-  <li *ngFor="let movie of popularMovies">
-    <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" alt="{{ movie.title }}">
-    <h3>{{ movie.title }}</h3>
-    <p>{{ movie.overview }}</p>
-  </li>
-</ul>
+<ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+  <div *ngFor="let movie of popularMovies">
+    <div class="px-2">
+      <img class="w-full" [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" alt="{{ movie.title }}">
+      <div class="text-center bg-white p-4 shadow-lg">
+        <h3 class="text-lg font-semibold mb-2">{{ movie.title }}</h3>
+        <p>{{ movie.overview }}</p>
+      </div>
+    </div>
+  </div>
+</ngx-slick-carousel>
+
+
 
 

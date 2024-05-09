@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from '../movie.service';
 import { NgFor } from '@angular/common';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 
 @Component({
   selector: 'app-movie-list',
   standalone: true,
-  imports: [NgFor,],
+  imports: [NgFor, SlickCarouselModule,],
   templateUrl: './movie-list.component.html',
   styleUrls: ['./movie-list.component.css']
   
@@ -34,5 +35,14 @@ export class MovieListComponent implements OnInit {
         }
       );
   }
+
+  slideConfig = {
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    arrows: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
+  };
+  
 }
 
